@@ -1,16 +1,16 @@
 # project_meals
 
-A new Flutter project.
+    The application displays a list of meals categories. Clicking a category 
+    will display the list of meals from the category. You can click every meal
+    to see the recipe and other cool info.
 
-## Getting Started
+### How is it going
 
-This project is a starting point for a Flutter application.
+You can check on [this link](https://projectmeals-59b70.web.app)!
 
-A few resources to get you started if this is your first Flutter project:
+For now the app is displaying the initial screen and the cards can be clicked
+to go to another page. This page is empty tho.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Teste in
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Google Chrome
