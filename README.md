@@ -1,8 +1,8 @@
 # project_meals
 
-    The application displays a list of meals categories. Clicking a category 
-    will display the list of meals from the category. You can click every meal
-    to see the recipe and other cool info.
+The application displays a list of meals categories. Clicking a category 
+will display the list of meals from the category. You can click every meal
+to see the recipe and other cool info.
 
 ### How is it going
 
