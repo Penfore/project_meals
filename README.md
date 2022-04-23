@@ -19,3 +19,5 @@ time it takes to prepare, difficulty and cost.
 ### Teste in
 
 - Google Chrome
+- Pixel 5 (Android 12)
+- iPhone 6s (Safari web browser)
