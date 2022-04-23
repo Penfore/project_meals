@@ -12,6 +12,8 @@ Learn the principles of navigation on a Flutter application.
 
 You can check on [this link](https://projectmeals-59b70.web.app)!
 
+Application works better visually on mobile.
+
 For now the app is displaying the initial screen and the cards can be clicked
 to go to another page. The clicked page is displaying the meals with pictures, 
 time it takes to prepare, difficulty and cost.
