@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_meals/data/dummy_data.dart';
+import 'package:project_meals/models/meal.dart';
+import 'package:project_meals/models/settings.dart';
 import 'package:project_meals/screens/meal_detail_screen.dart';
 import 'package:project_meals/screens/settings_screen.dart';
 import 'package:project_meals/screens/tabs_screen.dart';
@@ -8,7 +11,33 @@ import 'utils/app_routes.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Settings settings = Settings();
+  List<Meal> _avaibleMeals = DUMMY_MEALS;
+
+  void _filterMeals(Settings settings) { 
+    setState(() {
+      this.settings = settings;
+
+      _avaibleMeals = DUMMY_MEALS.where((meal) {
+        final filterGluten = settings.isGlutenFree! && !meal.isGlutenFree!;
+        final filterLactose = settings.isLactoseFree! && !meal.isLactoseFree!;
+        final filterVegan = settings.isVegan! && !meal.isVegan!;
+        final filterVegetarian = settings.isVegetarian! && !meal.isVegetarian!;
+
+        return !filterGluten &&
+            !filterLactose &&
+            !filterVegan &&
+            !filterVegetarian;
+      }).toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,9 +51,11 @@ class MyApp extends StatelessWidget {
               headline6: const TextStyle(
                 fontSize: 20,
                 fontFamily: 'RobotoCondensed',
+                color: Colors.black,
               ),
               bodyText1: const TextStyle(
                 fontFamily: 'Raleway',
+                color: Colors.black,
               ),
             ),
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
@@ -32,9 +63,10 @@ class MyApp extends StatelessWidget {
       // home: CategoriesScreen(),
       routes: {
         AppRoutes.HOME: (context) => const TabScreen(),
-        AppRoutes.CATEGORIES_MEALS: (context) => CategoriesMealsScreen(),
+        AppRoutes.CATEGORIES_MEALS: (context) =>
+            CategoriesMealsScreen(_avaibleMeals),
         AppRoutes.MEAL_DETAIL: (context) => const MealDetailScreen(),
-        AppRoutes.SETTINGS: (context) => const SettingsScreen(),
+        AppRoutes.SETTINGS: (context) => SettingsScreen(_filterMeals, settings),
       },
     );
   }

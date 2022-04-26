@@ -48,3 +48,7 @@ app.*.map.json
 # FVM
 
 .fvm
+
+# Firebase Hosting
+.firebaserc
+firebase-debug.log

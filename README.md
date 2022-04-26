@@ -17,6 +17,9 @@ Application works better visually on mobile.
 For now the app is displaying the initial screen and the cards can be clicked
 to go to another page. The clicked page is displaying the meals with pictures, 
 time it takes to prepare, difficulty and cost.
+You can also go to settings and choose some filters of wich type of meals you 
+want to see.
+It is also possible to add meals to the favorite page.
 
 ### Teste in
 

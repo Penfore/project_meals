@@ -4,14 +4,14 @@ import 'package:project_meals/utils/app_routes.dart';
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key}) : super(key: key);
 
-  Widget _createItem(IconData icon, String label, void Function() onTap) {
+  Widget _createItem({IconData? icon, String? label, void Function()? onTap}) {
     return ListTile(
       leading: Icon(
         icon,
         size: 26,
       ),
       title: Text(
-        label,
+        label!,
         style: const TextStyle(
           fontFamily: 'RobotoCondensed',
           fontSize: 24,
@@ -44,14 +44,16 @@ class MainDrawer extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           _createItem(
-            Icons.restaurant_rounded,
-            'Refeições',
-            () => Navigator.of(context).pushNamed(AppRoutes.HOME),
+            icon: Icons.restaurant_rounded,
+            label: 'Refeições',
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(AppRoutes.HOME),
           ),
           _createItem(
-            Icons.settings,
-            'Configurações',
-            () => Navigator.of(context).pushNamed(AppRoutes.SETTINGS),
+            icon: Icons.settings,
+            label: 'Configurações',
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(AppRoutes.SETTINGS),
           ),
         ],
       ),
